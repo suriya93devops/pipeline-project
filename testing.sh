@@ -2,6 +2,7 @@
 #! /bin/sh
 home_dir=/home/ec2-user/Monitoring
 OUTPUT_FILE="/home/ec2-user/Monitoring/sPACE.html"
+sed -i 's/\r//' setup.sh
 disk1_space()
 {
 	echo "<pre>"
