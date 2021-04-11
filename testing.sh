@@ -1,18 +1,13 @@
 #! /bin/bash
 #! /bin/sh
-
 home_dir=/home/ec2-user/Monitoring
 OUTPUT_FILE="/home/ec2-user/Monitoring/sPACE.html"
-
 disk1_space()
 {
-
 	echo "<pre>"
 	df / |grep -vE '^Filesystem|172.31.28.147' | awk '{ print $4}'
-	echo "</pre>"
-	
+	echo "</pre>"	
 }
-
 cat <<- _EOF_ > $OUTPUT_FILE
 	<!DOCTYPE html>
 	<html>
@@ -31,7 +26,6 @@ cat <<- _EOF_ > $OUTPUT_FILE
 			}
 			</style>
 	</head>
-
 	<body>
 	<table style="width:100%">
 	<tr>
@@ -45,6 +39,5 @@ cat <<- _EOF_ > $OUTPUT_FILE
       <td>$(disk1_space)</td>
     </tr>
 </table>
-
 </body>
 </html>
